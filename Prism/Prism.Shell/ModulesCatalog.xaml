@@ -1,8 +1,8 @@
 ﻿<!-- ModulesCatalog.xaml -->
 <Modularity:ModuleCatalog xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib"
-        xmlns:Modularity="clr-namespace:Microsoft.Practices.Prism.Modularity;assembly=Microsoft.Practices.Prism">
-    <!-- Module info without a group -->
+        xmlns:Modularity="clr-namespace:Microsoft.Practices.Prism.Modularity;assembly=Microsoft.Practices.Prism.Composition">
+     
     <Modularity:ModuleInfo Ref="file://Prism.Module.Demo.dll" ModuleName="DemoModule"
-            ModuleType="Prism.Module.Demo.DemoModule, Prism.Module.Demo.DemoModule, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+            ModuleType="Prism.Module.Demo.DemoModule, Prism.Module.Demo" />
 </Modularity:ModuleCatalog>
