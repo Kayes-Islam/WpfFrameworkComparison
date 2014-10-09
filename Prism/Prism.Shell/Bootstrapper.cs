@@ -6,6 +6,7 @@ using System.Windows;
 using Microsoft.Practices.Prism.Modularity;
 
 using PrismContrib.WindsorExtensions;
+using Microsoft.Practices.Prism.Mvvm;
 
 namespace Prism.Shell
 {
@@ -56,6 +57,47 @@ namespace Prism.Shell
 
             this.Container.Install(new Prism.Shell.Installers.Installer());
             this.Container.Install(new Core.UI.Installers.Installer());
+        }
+
+        protected override void ConfigureServiceLocator()
+        {
+            base.ConfigureServiceLocator();
+
+            ViewModelLocationProvider.SetDefaultViewTypeToViewModelTypeResolver(FindViewModelTypeFromViewType);
+            ViewModelLocationProvider.SetDefaultViewModelFactory(ResolveViewModelFromType);
+        }
+
+        private Type FindViewModelTypeFromViewType(Type viewType)
+        {
+            string viewName = viewType.Name;
+            string nameWithoutView = viewName;
+            if (viewName.EndsWith("View"))
+            {
+                nameWithoutView = viewName.Substring(0, viewName.LastIndexOf("View"));
+            }
+
+            string viewModelName = nameWithoutView + "ViewModel";
+            string interfaceName = "I" + viewModelName;
+
+            Type vmType = viewType
+                    .Assembly
+                    .GetExportedTypes()
+                    .FirstOrDefault(t=>t.Name == interfaceName);
+
+            if (vmType == null)
+            {
+                vmType = viewType
+                    .Assembly
+                    .GetExportedTypes()
+                    .FirstOrDefault(t => t.Name == viewModelName);
+            }
+
+            return vmType;
+        }
+
+        private object ResolveViewModelFromType(Type viewModelType)
+        {
+            return Container.Resolve(viewModelType);
         }
     }
 }

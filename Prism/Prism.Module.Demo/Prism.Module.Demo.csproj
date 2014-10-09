@@ -81,8 +81,8 @@
     <Compile Include="Interfaces\IDemoViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\DemoViewModel.cs" />
-    <Compile Include="Views\Demo.xaml.cs">
-      <DependentUpon>Demo.xaml</DependentUpon>
+    <Compile Include="Views\DemoView.xaml.cs">
+      <DependentUpon>DemoView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -90,7 +90,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Views\Demo.xaml">
+    <Page Include="Views\DemoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
