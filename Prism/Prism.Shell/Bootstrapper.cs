@@ -10,6 +10,7 @@ using Microsoft.Practices.Prism.Mvvm;
 using Prism.Shell.Views;
 using System.Xml;
 using System.Windows.Markup;
+using Castle.MicroKernel.Registration;
 
 namespace Prism.Shell
 {
@@ -28,24 +29,14 @@ namespace Prism.Shell
             App.Current.MainWindow.Show();
         }
 
-        //// Creating module isn't working, so temporarily adding by code
-        //protected override void ConfigureModuleCatalog()
-        //{
-        //    base.ConfigureModuleCatalog();
+        // Creating module isn't working, so temporarily adding by code
+        protected override void ConfigureModuleCatalog()
+        {
+            base.ConfigureModuleCatalog();
 
-        //    ModuleCatalog moduleCatalog = (ModuleCatalog)this.ModuleCatalog;
+            ModuleCatalog moduleCatalog = (ModuleCatalog)this.ModuleCatalog;
+        }
 
-        //    var demoModuleType = typeof(Prism.Module.Demo.DemoModule);
-        //    var demoModuleInfo = new ModuleInfo()
-        //    {
-        //        ModuleName = demoModuleType.Name,
-        //        ModuleType = demoModuleType.AssemblyQualifiedName
-        //    };
-
-        //    moduleCatalog.AddModule(demoModuleInfo);
-        //}
-
-        // TODO: Have to fix this
         protected override IModuleCatalog CreateModuleCatalog()
         {
             XmlReader xmlReader = XmlReader.Create("ModulesCatalog.xaml");
@@ -59,6 +50,16 @@ namespace Prism.Shell
 
             this.Container.Install(new Prism.Shell.Installers.Installer());
             this.Container.Install(new Core.UI.Installers.Installer());
+
+            /// TODO: Have to change this so that instead of registering all IModules
+            /// just register the one's that are defined in Module Catalog
+            Container.Register(
+                Classes
+                    .FromAssemblyInDirectory(new AssemblyFilter(""))
+                    .BasedOn<IModule>()
+                    .WithServiceSelf()
+                    .LifestyleTransient()
+            );
         }
 
         protected override void ConfigureServiceLocator()

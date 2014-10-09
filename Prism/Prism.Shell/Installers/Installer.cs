@@ -21,9 +21,9 @@ namespace Prism.Shell.Installers
                     .For<ShellView>()
                     .LifestyleSingleton(),
 
-                Component
-                    .For<Module.Demo.DemoModule>()
-                    .LifestyleTransient(),
+                //Component
+                //    .For<Module.Demo.DemoModule>()
+                //    .LifestyleTransient(),
 
                 Component
                     .For<IShellViewModel>()
