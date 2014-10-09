@@ -1,6 +1,9 @@
 ﻿using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
+using Prism.Shell.Interfaces;
+using Prism.Shell.ViewModels;
+using Prism.Shell.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,11 +18,17 @@ namespace Prism.Shell.Installers
         {
             container.Register(
                 Component
-                    .For<Shell>()
+                    .For<ShellView>()
                     .LifestyleSingleton(),
+
                 Component
                     .For<Module.Demo.DemoModule>()
-                    .LifestyleTransient()
+                    .LifestyleTransient(),
+
+                Component
+                    .For<IShellViewModel>()
+                    .ImplementedBy<ShellViewModel>()
+                    .LifestyleSingleton()
             );            
         }
     }

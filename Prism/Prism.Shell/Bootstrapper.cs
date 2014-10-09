@@ -7,6 +7,7 @@ using Microsoft.Practices.Prism.Modularity;
 
 using PrismContrib.WindsorExtensions;
 using Microsoft.Practices.Prism.Mvvm;
+using Prism.Shell.Views;
 
 namespace Prism.Shell
 {
@@ -14,7 +15,7 @@ namespace Prism.Shell
     {
         protected override DependencyObject CreateShell()
         {
-            return this.Container.Resolve<Shell>();
+            return this.Container.Resolve<ShellView>();
         }
 
         protected override void InitializeShell()
