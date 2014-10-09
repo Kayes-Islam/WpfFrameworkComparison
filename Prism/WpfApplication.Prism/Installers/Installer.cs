@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfApplication.Prism.Installers
+namespace Prism.Shell.Installers
 {
     public class Installer : IWindsorInstaller
     {

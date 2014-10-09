@@ -1,4 +1,4 @@
-﻿using WpfApplication.Prism.Installers;
+﻿using Prism.Shell.Installers;
 using Microsoft.Practices.Prism.Modularity;
 using PrismContrib.WindsorExtensions;
 using System;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace WpfApplication.Prism
+namespace Prism.Shell
 {
     public class Bootstrapper : WindsorBootstrapper
     {

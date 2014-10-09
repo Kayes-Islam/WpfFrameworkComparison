@@ -7,8 +7,8 @@
     <ProjectGuid>{629D4363-85CA-4197-8A61-7DA67507CC4C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WpfApplication.Prism</RootNamespace>
-    <AssemblyName>WpfApplication.Prism</AssemblyName>
+    <RootNamespace>Prism.Shell</RootNamespace>
+    <AssemblyName>Prism.Shell</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

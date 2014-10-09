@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApplication.Prism", "WpfApplication.Prism\WpfApplication.Prism.csproj", "{629D4363-85CA-4197-8A61-7DA67507CC4C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prism.Shell", "Prism\WpfApplication.Prism\Prism.Shell.csproj", "{629D4363-85CA-4197-8A61-7DA67507CC4C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Prism", "Prism", "{9976F77B-EE0B-48D3-8EFC-3D2827DB1105}"
 EndProject
