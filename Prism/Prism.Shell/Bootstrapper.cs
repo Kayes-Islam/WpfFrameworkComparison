@@ -26,6 +26,7 @@ namespace Prism.Shell
             App.Current.MainWindow.Show();
         }
 
+        // Creating module isn't working, so temporarily adding by code
         protected override void ConfigureModuleCatalog()
         {
             base.ConfigureModuleCatalog();
@@ -42,6 +43,7 @@ namespace Prism.Shell
             moduleCatalog.AddModule(demoModuleInfo);
         }
 
+        // TODO: Have to fix this
         //protected override IModuleCatalog CreateModuleCatalog()
         //{
         //    return Microsoft.Practices.Prism.Modularity.ModuleCatalog.CreateFromXaml(
