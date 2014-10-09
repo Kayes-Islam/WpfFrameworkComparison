@@ -1,8 +1,23 @@
 ﻿<Window x:Class="Prism.Shell.Shell"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Shell" Height="300" Width="300">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:cal="http://www.codeplex.com/prism"
+        xmlns:views="WpfFrameworkComparison/Core/UI/Views" 
+        xmlns:common="WpfFrameworkComparison/Core/Common"
+        Title="Shell" Height="600" Width="800">
     <Grid>
-        <TextBlock Text="Hi there" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="5*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+
+        <ItemsControl cal:RegionManager.RegionName="{x:Static common:KnownRegionNames.NavigationPanel}" 
+                BorderThickness="1" 
+                BorderBrush="Black"  />
+
+        <views:MimicView Grid.Column="1" />
+
+        <TabControl Grid.Column="2" cal:RegionManager.RegionName="{x:Static common:KnownRegionNames.InfoPanel}"/>
     </Grid>
 </Window>

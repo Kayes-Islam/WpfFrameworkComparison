@@ -1,12 +1,11 @@
-﻿using Prism.Shell.Installers;
-using Microsoft.Practices.Prism.Modularity;
-using PrismContrib.WindsorExtensions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
+
+using Microsoft.Practices.Prism.Modularity;
+
+using PrismContrib.WindsorExtensions;
 
 namespace Prism.Shell
 {
@@ -30,14 +29,33 @@ namespace Prism.Shell
             base.ConfigureModuleCatalog();
 
             ModuleCatalog moduleCatalog = (ModuleCatalog)this.ModuleCatalog;
-            //moduleCatalog.AddModule(typeof(HelloWorldModule.HelloWorldModule));
+
+            var demoModuleType = typeof(Prism.Module.Demo.DemoModule);
+            var demoModuleInfo = new ModuleInfo()
+            {
+                ModuleName = demoModuleType.Name,
+                ModuleType = demoModuleType.AssemblyQualifiedName
+            };
+
+            moduleCatalog.AddModule(demoModuleInfo);
         }
+
+        //protected override IModuleCatalog CreateModuleCatalog()
+        //{
+        //    return Microsoft.Practices.Prism.Modularity.ModuleCatalog.CreateFromXaml(
+        //        new Uri(
+        //            "/Prism.Shell;component/ModulesCatalog.xaml",
+        //            UriKind.Relative
+        //        )
+        //    );
+        //}
 
         protected override void ConfigureContainer()
         {
             base.ConfigureContainer();
 
-            this.Container.Install(new Installer());
+            this.Container.Install(new Prism.Shell.Installers.Installer());
+            this.Container.Install(new Core.UI.Installers.Installer());
         }
     }
 }
