@@ -5,6 +5,12 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApplication.Prism", "WpfApplication.Prism\WpfApplication.Prism.csproj", "{629D4363-85CA-4197-8A61-7DA67507CC4C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Prism", "Prism", "{9976F77B-EE0B-48D3-8EFC-3D2827DB1105}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{B0E72408-4324-4084-9AF2-4EC9915A8C63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prism.Module.Demo", "Prism\Prism.Module.Demo\Prism.Module.Demo.csproj", "{E5179284-02AB-442D-A7D5-EDD0E484536D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +21,17 @@ Global
 		{629D4363-85CA-4197-8A61-7DA67507CC4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{629D4363-85CA-4197-8A61-7DA67507CC4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{629D4363-85CA-4197-8A61-7DA67507CC4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5179284-02AB-442D-A7D5-EDD0E484536D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5179284-02AB-442D-A7D5-EDD0E484536D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5179284-02AB-442D-A7D5-EDD0E484536D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5179284-02AB-442D-A7D5-EDD0E484536D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{629D4363-85CA-4197-8A61-7DA67507CC4C} = {9976F77B-EE0B-48D3-8EFC-3D2827DB1105}
+		{B0E72408-4324-4084-9AF2-4EC9915A8C63} = {9976F77B-EE0B-48D3-8EFC-3D2827DB1105}
+		{E5179284-02AB-442D-A7D5-EDD0E484536D} = {B0E72408-4324-4084-9AF2-4EC9915A8C63}
 	EndGlobalSection
 EndGlobal
