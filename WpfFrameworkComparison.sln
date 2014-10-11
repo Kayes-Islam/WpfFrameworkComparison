@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.UI", "Core\Core.UI\Cor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Common", "Core\Core.Common\Core.Common.csproj", "{59B321DB-B5BE-494D-B388-7945C1CBD27F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prism.Module.CollectionEditorDemo", "Prism\Prism.Module.CollectionEditorDemo\Prism.Module.CollectionEditorDemo.csproj", "{B3E9F657-9963-4E74-984F-0D6C0F815480}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{59B321DB-B5BE-494D-B388-7945C1CBD27F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59B321DB-B5BE-494D-B388-7945C1CBD27F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59B321DB-B5BE-494D-B388-7945C1CBD27F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3E9F657-9963-4E74-984F-0D6C0F815480}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3E9F657-9963-4E74-984F-0D6C0F815480}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3E9F657-9963-4E74-984F-0D6C0F815480}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3E9F657-9963-4E74-984F-0D6C0F815480}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,5 +55,6 @@ Global
 		{E5179284-02AB-442D-A7D5-EDD0E484536D} = {B0E72408-4324-4084-9AF2-4EC9915A8C63}
 		{101F1EA4-67BB-422F-811A-6A7317DF8821} = {15FE58B3-316A-4D96-99B0-64F2B094AF1B}
 		{59B321DB-B5BE-494D-B388-7945C1CBD27F} = {15FE58B3-316A-4D96-99B0-64F2B094AF1B}
+		{B3E9F657-9963-4E74-984F-0D6C0F815480} = {B0E72408-4324-4084-9AF2-4EC9915A8C63}
 	EndGlobalSection
 EndGlobal

@@ -9,6 +9,6 @@ namespace Core.Common
     public static class KnownRegionNames
     {
         public const string InfoPanel = "InfoPanel";
-        public const string NavigationPanel = "NavigationPanel";
+        public const string ContentRegion = "ContentRegion";
     }
 }

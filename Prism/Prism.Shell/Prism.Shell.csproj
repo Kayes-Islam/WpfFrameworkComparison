@@ -154,6 +154,10 @@
       <Project>{101f1ea4-67bb-422f-811a-6a7317df8821}</Project>
       <Name>Core.UI</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Prism.Module.CollectionEditorDemo\Prism.Module.CollectionEditorDemo.csproj">
+      <Project>{b3e9f657-9963-4e74-984f-0d6c0f815480}</Project>
+      <Name>Prism.Module.CollectionEditorDemo</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Prism.Module.Demo\Prism.Module.Demo.csproj">
       <Project>{e5179284-02ab-442d-a7d5-edd0e484536d}</Project>
       <Name>Prism.Module.Demo</Name>

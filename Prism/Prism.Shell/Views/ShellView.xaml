@@ -11,10 +11,10 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="5*" />
-            <ColumnDefinition Width="3*" />
         </Grid.ColumnDefinitions>
 
-        <ItemsControl BorderThickness="1" BorderBrush="Black" ItemsSource="{Binding NavigationViewModel.NavigationItems}">
+        <ItemsControl BorderThickness="1" BorderBrush="Black"
+                ItemsSource="{Binding NavigationViewModel.NavigationItems}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <Button Content="{Binding Title}" Command="{Binding Command}" />
@@ -22,14 +22,7 @@
             </ItemsControl.ItemTemplate>
         </ItemsControl>
 
-        <views:MimicView Grid.Column="1" />
+        <ContentControl Grid.Column="1" cal:RegionManager.RegionName="{x:Static common:KnownRegionNames.ContentRegion}" />
 
-        <TabControl Grid.Column="2" cal:RegionManager.RegionName="{x:Static common:KnownRegionNames.InfoPanel}">
-            <TabControl.ItemContainerStyle>
-                <Style TargetType="{x:Type TabItem}" >
-                    <Setter Property="Header" Value="{Binding Content.DataContext.TabHeader}" />
-                </Style>
-            </TabControl.ItemContainerStyle>
-        </TabControl>
     </Grid>
 </Window>
