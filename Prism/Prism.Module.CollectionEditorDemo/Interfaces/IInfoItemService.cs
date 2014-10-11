@@ -10,5 +10,6 @@ namespace Prism.Module.CollectionEditorDemo.Interfaces
     public interface IInfoItemService
     {
         List<InfoItemViewModel> GetInfoItems();
+
     }
 }
