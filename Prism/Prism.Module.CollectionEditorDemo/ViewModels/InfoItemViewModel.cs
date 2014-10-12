@@ -1,4 +1,8 @@
-﻿using Microsoft.Practices.Prism.Mvvm;
+﻿using Core.Common.Interfaces;
+using Core.Common.Extensions;
+using Microsoft.Practices.Prism.Commands;
+using Microsoft.Practices.Prism.Interactivity.InteractionRequest;
+using Microsoft.Practices.Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,8 +12,14 @@ using System.Threading.Tasks;
 
 namespace Prism.Module.CollectionEditorDemo.ViewModels
 {
-    public class InfoItemViewModel : BindableBase
+    public class InfoItemViewModel : BindableBase, IDialogAware
     {
+        public InfoItemViewModel()
+        {
+            SaveCommand = new DelegateCommand(Save);
+            CancelCommand = new DelegateCommand(Cancel);
+        }
+
         private string _name;
         public string Name
         {
@@ -65,5 +75,20 @@ namespace Prism.Module.CollectionEditorDemo.ViewModels
                 OnPropertyChanged(() => Properties);
             }
         }
+
+        public DelegateCommand SaveCommand { get; private set; }
+        public DelegateCommand CancelCommand { get; private set; }
+
+        public void Save()
+        {
+            DialogHandle.TryClose(true);
+        }
+
+        public void Cancel()
+        {
+            DialogHandle.TryClose(false);
+        }
+        
+        public IDialogHandle DialogHandle { get; set; }
     }
 }

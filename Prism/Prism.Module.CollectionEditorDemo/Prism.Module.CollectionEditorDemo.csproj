@@ -82,6 +82,9 @@
     <Compile Include="Views\CollectionEditorDemoView.xaml.cs">
       <DependentUpon>CollectionEditorDemoView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\InfoItemView.xaml.cs">
+      <DependentUpon>InfoItemView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Core\Core.Common\Core.Common.csproj">
@@ -93,9 +96,15 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <ItemGroup>
     <Page Include="Views\CollectionEditorDemoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InfoItemView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

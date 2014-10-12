@@ -66,10 +66,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\InteractionExtensions.cs" />
+    <Compile Include="Interaction\InteractionRequest.cs" />
+    <Compile Include="Interfaces\IDialogAware.cs" />
+    <Compile Include="Interfaces\IDialogHandle.cs" />
     <Compile Include="Interfaces\IHaveTabHeader.cs" />
+    <Compile Include="Interfaces\IInteractionService.cs" />
     <Compile Include="Interfaces\IUiExtensionService.cs" />
+    <Compile Include="Notifications\Notification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="KnownRegionNames.cs" />
+    <Compile Include="ViewModels\InteractionRequestAware.cs" />
     <Compile Include="ViewModels\NavigationItemViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,5 @@
-﻿using Castle.MicroKernel.Registration;
+﻿using Castle.Facilities.TypedFactory;
+using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 using Core.Common.Interfaces;
@@ -32,7 +33,27 @@ namespace Core.UI.Installers
                 Component
                     .For<INavigationViewModel>()
                     .ImplementedBy<NavigationViewModel>()
-                    .LifestyleSingleton()
+                    .LifestyleSingleton(),
+
+                Component
+                    .For<IDialogHandle>()
+                    .ImplementedBy<DialogHandle>()
+                    .LifestyleTransient(),
+
+                Component
+                    .For<IDialogHandleFactory>()
+                    .AsFactory()
+                    .LifestyleTransient(),
+
+                Component
+                    .For<IViewResolver>()
+                    .ImplementedBy<ViewResolver>()
+                    .LifestyleTransient(),
+                
+                Component
+                    .For<IInteractionService>()
+                    .ImplementedBy<InteractionService>()
+                    .LifestyleTransient()               
             );  
         }
     }

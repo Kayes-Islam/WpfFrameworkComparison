@@ -1,4 +1,6 @@
-﻿using Microsoft.Practices.Prism.Commands;
+﻿using Core.Common.Interfaces;
+using Microsoft.Practices.Prism.Commands;
+using Microsoft.Practices.Prism.Interactivity.InteractionRequest;
 using Microsoft.Practices.Prism.Mvvm;
 using Prism.Module.CollectionEditorDemo.Interfaces;
 using System;
@@ -14,15 +16,18 @@ namespace Prism.Module.CollectionEditorDemo.ViewModels
     public class CollectionEditorDemoViewModel : BindableBase, ICollectionEditorDemoViewModel
     {
         private readonly IInfoItemService _infoItemService;
+        private readonly IInteractionService _interactionService;
         private ObservableCollection<InfoItemViewModel> _items;
 
         public CollectionEditorDemoViewModel(
-            IInfoItemService infoItemService
+            IInfoItemService infoItemService,
+            IInteractionService interactionService
         )
         {
             _infoItemService = infoItemService;
+            _interactionService = interactionService;
             _items = new ObservableCollection<InfoItemViewModel>();
-            EditCommand = new DelegateCommand<InfoItemViewModel>(EditInfoItem, IsEditInfoItemEnabled);
+            EditCommand = new DelegateCommand(EditInfoItem, IsEditInfoItemEnabled);
         }
 
         public ObservableCollection<InfoItemViewModel> Items
@@ -48,14 +53,16 @@ namespace Prism.Module.CollectionEditorDemo.ViewModels
             }
         }
 
-        public DelegateCommand<InfoItemViewModel> EditCommand { get; private set; }
+        public DelegateCommand EditCommand { get; private set; }
 
-        public void EditInfoItem(InfoItemViewModel infoItem)
+        public void EditInfoItem()
         {
-            var item = infoItem;
+            InfoItemViewModel infoItem = SelectedItem;
+            var dialogResult = _interactionService.ShowDialog(infoItem);
+            var b = dialogResult;
         }
 
-        public bool IsEditInfoItemEnabled(InfoItemViewModel infoItem)
+        public bool IsEditInfoItemEnabled()
         {
             return SelectedItem != null;
         }

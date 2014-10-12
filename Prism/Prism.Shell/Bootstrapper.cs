@@ -11,6 +11,7 @@ using Prism.Shell.Views;
 using System.Xml;
 using System.Windows.Markup;
 using Castle.MicroKernel.Registration;
+using Castle.Facilities.TypedFactory;
 
 namespace Prism.Shell
 {
@@ -47,6 +48,7 @@ namespace Prism.Shell
         protected override void ConfigureContainer()
         {
             base.ConfigureContainer();
+            this.Container.AddFacility<TypedFactoryFacility>();
 
             this.Container.Install(new Prism.Shell.Installers.Installer());
             this.Container.Install(new Core.UI.Installers.Installer());
@@ -57,6 +59,15 @@ namespace Prism.Shell
                 Classes
                     .FromAssemblyInDirectory(new AssemblyFilter(""))
                     .BasedOn<IModule>()
+                    .WithServiceSelf()
+                    .LifestyleTransient()
+            );
+
+            /// TODO: Have to move this later to installer base
+            Container.Register(
+                Classes
+                    .FromAssemblyInDirectory(new AssemblyFilter(""))
+                    .BasedOn<IView>()
                     .WithServiceSelf()
                     .LifestyleTransient()
             );
@@ -85,7 +96,7 @@ namespace Prism.Shell
             Type vmType = viewType
                     .Assembly
                     .GetExportedTypes()
-                    .FirstOrDefault(t=>t.Name == interfaceName);
+                    .FirstOrDefault(t => t.Name == interfaceName);
 
             if (vmType == null)
             {

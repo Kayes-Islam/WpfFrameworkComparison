@@ -77,10 +77,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Installers\Installer.cs" />
+    <Compile Include="Interfaces\IDialogHandleFactory.cs" />
     <Compile Include="Interfaces\IMimicViewModel.cs" />
     <Compile Include="Interfaces\INavigationViewModel.cs" />
+    <Compile Include="Interfaces\IViewResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DialogHandle.cs" />
+    <Compile Include="Services\InteractionService.cs" />
     <Compile Include="Services\UiExtensionService.cs" />
+    <Compile Include="Services\ViewResolver.cs" />
     <Compile Include="ViewModels\MimicViewModel.cs" />
     <Compile Include="ViewModels\NavigationViewModel.cs" />
     <Compile Include="Views\MimicView.xaml.cs">
