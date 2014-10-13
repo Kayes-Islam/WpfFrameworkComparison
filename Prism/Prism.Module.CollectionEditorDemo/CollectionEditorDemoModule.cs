@@ -22,7 +22,7 @@ namespace Prism.Module.CollectionEditorDemo
         private IRegionManager _regionManager;
         private NavigationItemViewModel _navigationItem;
         private IUiExtensionService _uiExtensionService;
-        private CollectionEditorDemoView _view;
+        private ICollectionEditorDemoViewModel _viewModel;
 
         public CollectionEditorDemoModule(
             IWindsorContainer container,
@@ -44,15 +44,16 @@ namespace Prism.Module.CollectionEditorDemo
 
         public void OpenView()
         {
-            if (_view == null)
+            Uri uri = new Uri("CollectionEditorDemo", UriKind.Relative);
+            try
             {
-                _view = new CollectionEditorDemoView();
-                _regionManager.AddToRegion(KnownRegionNames.ContentRegion, _view);
-                var viewModel = _container.Resolve<ICollectionEditorDemoViewModel>();
-                viewModel.LoadData();
+                _regionManager.RequestNavigate(KnownRegionNames.ContentRegion, uri);
             }
-
-            _regionManager.Regions[KnownRegionNames.ContentRegion].Activate(_view);
+            catch
+            {
+                throw;
+            }
+            
         }
     }
 }

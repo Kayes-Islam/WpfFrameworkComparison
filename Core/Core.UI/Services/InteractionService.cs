@@ -45,6 +45,19 @@ namespace Core.UI.Services
 
             window.DataContext = viewModel;
             window.Content = view;
+
+            var frameworkElement = view as FrameworkElement;
+
+            // TODO: This is a temporary hack. A better approach would be to create an attached property
+            // that would set the window height and width of the property.
+            if (frameworkElement != null)
+            {
+                window.Width = frameworkElement.Width;
+                window.Height = frameworkElement.Height;
+                window.MaxWidth = frameworkElement.MaxHeight;
+                window.MaxHeight = frameworkElement.MaxHeight;
+            }
+
             var dialogResult = window.ShowDialog();
 
             if (dialogAware != null)

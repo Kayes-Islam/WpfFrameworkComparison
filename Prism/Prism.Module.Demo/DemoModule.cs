@@ -46,13 +46,8 @@ namespace Prism.Module.Demo
 
         private void OpenView()
         {
-            if (_view == null)
-            {
-                _view = new DemoView();
-                _regionManager.AddToRegion(KnownRegionNames.ContentRegion, _view);
-            }
-
-            _regionManager.Regions[KnownRegionNames.ContentRegion].Activate(_view);
+            Uri uri = new Uri("DemoView", UriKind.Relative);
+            _regionManager.RequestNavigate(KnownRegionNames.ContentRegion, uri);
         }
 
 

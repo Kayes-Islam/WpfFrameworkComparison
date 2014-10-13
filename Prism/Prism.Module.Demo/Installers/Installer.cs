@@ -3,6 +3,7 @@ using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 using Prism.Module.Demo.Interfaces;
 using Prism.Module.Demo.ViewModels;
+using Prism.Module.Demo.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,11 @@ namespace Prism.Module.Demo.Installers
                 Component
                     .For<IDemoViewModel>()
                     .ImplementedBy<Demo.ViewModels.DemoViewModel>()
-                    .LifestyleSingleton()
+                    .LifestyleSingleton(),
+                Component
+                    .For<DemoView>()
+                    .Named("DemoView")
+                    .LifestyleTransient() //Why doesn't navigation work when singleton ?????
             );
         }        
     }

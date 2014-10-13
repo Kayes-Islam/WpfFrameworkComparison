@@ -2,6 +2,7 @@
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Interactivity.InteractionRequest;
 using Microsoft.Practices.Prism.Mvvm;
+using Microsoft.Practices.Prism.Regions;
 using Prism.Module.CollectionEditorDemo.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,8 @@ namespace Prism.Module.CollectionEditorDemo.ViewModels
         private readonly IInfoItemService _infoItemService;
         private readonly IInteractionService _interactionService;
         private ObservableCollection<InfoItemViewModel> _items;
+        private bool _isLoaded;
+
 
         public CollectionEditorDemoViewModel(
             IInfoItemService infoItemService,
@@ -74,6 +77,25 @@ namespace Prism.Module.CollectionEditorDemo.ViewModels
             foreach (var item in items)
             {
                 _items.Add(item);
+            }
+
+            _isLoaded = true;
+        }
+
+        public bool IsNavigationTarget(NavigationContext navigationContext)
+        {
+            return true;
+        }
+
+        public void OnNavigatedFrom(NavigationContext navigationContext)
+        {
+        }
+
+        public void OnNavigatedTo(NavigationContext navigationContext)
+        {
+            if (!_isLoaded)
+            {
+                LoadData();
             }
         }
     }
