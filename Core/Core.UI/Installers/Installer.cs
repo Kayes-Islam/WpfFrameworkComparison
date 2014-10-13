@@ -2,7 +2,9 @@
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
+using Core.Common.Interactions;
 using Core.Common.Interfaces;
+using Core.UI.Interactions;
 using Core.UI.Interfaces;
 using Core.UI.Services;
 using Core.UI.ViewModels;

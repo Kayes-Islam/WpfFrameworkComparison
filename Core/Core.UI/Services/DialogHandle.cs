@@ -1,4 +1,5 @@
-﻿using Core.Common.Interfaces;
+﻿using Core.Common.Interactions;
+using Core.Common.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

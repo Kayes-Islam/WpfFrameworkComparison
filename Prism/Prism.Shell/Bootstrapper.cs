@@ -26,6 +26,8 @@ namespace Prism.Shell
         {
             base.InitializeShell();
 
+            System.Windows.Forms.Application.EnableVisualStyles();
+
             App.Current.MainWindow = (Window)this.Shell;
             App.Current.MainWindow.Show();
         }

@@ -1,6 +1,7 @@
 ﻿using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
+using Core.Common.Constants;
 using Prism.Module.ParentModule.Interfaces;
 using Prism.Module.ParentModule.ViewModels;
 using Prism.Module.ParentModule.Views;
@@ -23,7 +24,7 @@ namespace Prism.Module.ParentModule.Installers
                     .LifestyleSingleton(),
                 Component
                     .For<ParentModuleView>()
-                    .Named("ParentModuleView")
+                    .Named(KnownViewNames.ParentModuleView)
                     .LifestyleTransient() //Why doesn't navigation work when singleton ?????
             );
         }

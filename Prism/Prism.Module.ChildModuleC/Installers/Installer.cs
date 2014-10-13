@@ -1,15 +1,15 @@
 ﻿using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
-using Prism.Module.ChildModuleA.ViewModels;
-using Prism.Module.ChildModuleA.Views;
+using Prism.Module.ChildModuleC.ViewModels;
+using Prism.Module.ChildModuleC.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Prism.Module.ChildModuleA.Installers
+namespace Prism.Module.ChildModuleC.Installers
 {
     public class Installer : IWindsorInstaller
     {
@@ -17,12 +17,15 @@ namespace Prism.Module.ChildModuleA.Installers
         {
             container.Register(
                 Component
-                    .For<ModuleAViewModel>()
-                    .LifestyleSingleton()
+                    .For<ModuleCViewModel>()
+                    .LifestyleSingleton(),
 
+                Component
+                    .For<CustomUserControl>()
+                    .LifestyleTransient()
                 //Component
-                //    .For<ModuleAView>()
-                //    .Named("ModuleAView")
+                //    .For<ModuleCView>()
+                //    .Named("ModuleCView")
                 //    .LifestyleTransient() //Why doesn't navigation work when singleton ?????
             );
         }

@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\KnownViewNames.cs" />
     <Compile Include="Extensions\InteractionExtensions.cs" />
     <Compile Include="Interaction\InteractionRequest.cs" />
     <Compile Include="Interfaces\IDialogAware.cs" />
@@ -75,7 +76,7 @@
     <Compile Include="Interfaces\IUiExtensionService.cs" />
     <Compile Include="Notifications\Notification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="KnownRegionNames.cs" />
+    <Compile Include="Constants\KnownRegionNames.cs" />
     <Compile Include="ViewModels\InteractionRequestAware.cs" />
     <Compile Include="ViewModels\NavigationItemViewModel.cs" />
   </ItemGroup>

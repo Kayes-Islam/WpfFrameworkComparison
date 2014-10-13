@@ -1,4 +1,5 @@
-﻿using Core.Common.Interfaces;
+﻿using Core.Common.Interactions;
+using Core.Common.Interfaces;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Interactivity.InteractionRequest;
 using Microsoft.Practices.Prism.Mvvm;

@@ -1,6 +1,7 @@
-﻿using Core.Common.Interfaces;
+﻿using Core.Common.Interactions;
+using Core.Common.Interfaces;
+using Core.UI.Interactions;
 using Core.UI.Interfaces;
-
 using System;
 using System.Collections.Generic;
 using System.Linq;

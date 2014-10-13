@@ -5,6 +5,7 @@
      
     <Modularity:ModuleInfo Ref="file://Prism.Module.Demo.dll" ModuleName="DemoModule"
             ModuleType="Prism.Module.Demo.DemoModule, Prism.Module.Demo" />
+    
     <Modularity:ModuleInfo Ref="file://Prism.Module.Demo.dll" ModuleName="CollectionEditorDemo"
             ModuleType="Prism.Module.CollectionEditorDemo.CollectionEditorDemoModule, Prism.Module.CollectionEditorDemo" />
 
@@ -17,4 +18,7 @@
     <Modularity:ModuleInfo Ref="file://Prism.Module.ChildModuleB.dll" ModuleName="ModuleB"
             ModuleType="Prism.Module.ChildModuleB.ModuleB, Prism.Module.ChildModuleB" />
 
+    <Modularity:ModuleInfo Ref="file://Prism.Module.ChildModuleC.dll" ModuleName="ModuleC"
+            ModuleType="Prism.Module.ChildModuleC.ModuleC, Prism.Module.ChildModuleC" />    
+    
 </Modularity:ModuleCatalog>

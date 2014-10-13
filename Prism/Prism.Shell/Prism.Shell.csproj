@@ -74,6 +74,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -159,6 +160,10 @@
     <ProjectReference Include="..\Prism.Module.ChildModuleB\Prism.Module.ChildModuleB.csproj">
       <Project>{0f3f4434-d0f1-47a1-8cee-62eddc96f6dd}</Project>
       <Name>Prism.Module.ChildModuleB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Prism.Module.ChildModuleC\Prism.Module.ChildModuleC.csproj">
+      <Project>{21b1a5c4-de0f-4b7e-956f-fa3c7863c64d}</Project>
+      <Name>Prism.Module.ChildModuleC</Name>
     </ProjectReference>
     <ProjectReference Include="..\Prism.Module.CollectionEditorDemo\Prism.Module.CollectionEditorDemo.csproj">
       <Project>{b3e9f657-9963-4e74-984f-0d6c0f815480}</Project>

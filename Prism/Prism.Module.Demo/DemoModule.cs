@@ -21,8 +21,7 @@ namespace Prism.Module.Demo
         private readonly IRegionManager _regionManager;
         private readonly IWindsorContainer _container;
         private readonly IUiExtensionService _uiExtensionService;
-        private DemoView _view;
-
+        
         private NavigationItemViewModel _navigationItem;
 
         public DemoModule(

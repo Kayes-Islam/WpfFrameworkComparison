@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Common.Extensions
+namespace Core.Common.Interactions
 {
     public static class InteractionExtensions
     {

@@ -1,5 +1,6 @@
 ﻿using Castle.Windsor;
 using Core.Common;
+using Core.Common.Constants;
 using Core.Common.Interfaces;
 using Core.Common.ViewModels;
 using Microsoft.Practices.Prism.Commands;
@@ -42,7 +43,7 @@ private readonly IRegionManager _regionManager;
 
         private void OpenView()
         {
-            Uri uri = new Uri("ParentModuleView", UriKind.Relative);
+            Uri uri = new Uri(KnownViewNames.ParentModuleView, UriKind.Relative);
             _regionManager.RequestNavigate(KnownRegionNames.ContentRegion, uri);
         }        
     }
