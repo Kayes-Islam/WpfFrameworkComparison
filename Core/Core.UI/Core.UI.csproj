@@ -81,6 +81,9 @@
     <Compile Include="Interfaces\IMimicViewModel.cs" />
     <Compile Include="Interfaces\INavigationViewModel.cs" />
     <Compile Include="Interfaces\IViewResolver.cs" />
+    <Compile Include="PrismExtensions\CustomRegion.cs" />
+    <Compile Include="PrismExtensions\CustomSelectorSourceSyncBehaviour.cs" />
+    <Compile Include="PrismExtensions\CustomTabRegionAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DialogHandle.cs" />
     <Compile Include="Services\InteractionService.cs" />
@@ -108,9 +111,7 @@
       <Name>Core.Common</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="PrismExtensions\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

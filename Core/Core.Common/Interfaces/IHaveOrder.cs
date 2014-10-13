@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core.Common.Interfaces
 {
-    public interface IHaveTabHeader
+    public interface IHaveOrder
     {
-        string TabHeader { get; }
     }
 }

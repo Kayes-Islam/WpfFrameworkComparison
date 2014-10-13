@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Prism.Module.ChildModuleC.ViewModels
 {
-    public class ModuleCViewModel : BindableBase, IHaveTabHeader
+    public class ModuleCViewModel : BindableBase, IHaveHeader
     {
         public ModuleCViewModel()
         {
@@ -28,7 +28,7 @@ namespace Prism.Module.ChildModuleC.ViewModels
             }
         }
 
-        public string TabHeader
+        public string Header
         {
             get { return "Module C"; }
         }

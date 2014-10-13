@@ -16,7 +16,7 @@ namespace Prism.Module.Demo.ViewModels
             SomePropertyValue = "This is a sample property value.";
         }
         
-        public string TabHeader
+        public string Header
         {
             get
             {

@@ -71,7 +71,8 @@
     <Compile Include="Interaction\InteractionRequest.cs" />
     <Compile Include="Interfaces\IDialogAware.cs" />
     <Compile Include="Interfaces\IDialogHandle.cs" />
-    <Compile Include="Interfaces\IHaveTabHeader.cs" />
+    <Compile Include="Interfaces\IHaveOrder.cs" />
+    <Compile Include="Interfaces\IHaveHeader.cs" />
     <Compile Include="Interfaces\IInteractionService.cs" />
     <Compile Include="Interfaces\IUiExtensionService.cs" />
     <Compile Include="Notifications\Notification.cs" />

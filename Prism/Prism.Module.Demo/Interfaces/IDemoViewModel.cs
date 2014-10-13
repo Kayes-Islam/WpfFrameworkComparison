@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Prism.Module.Demo.Interfaces
 {
-    public interface IDemoViewModel : IHaveTabHeader
+    public interface IDemoViewModel : IHaveHeader
     {
     }
 }
