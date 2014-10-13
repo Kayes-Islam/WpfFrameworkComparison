@@ -7,4 +7,14 @@
             ModuleType="Prism.Module.Demo.DemoModule, Prism.Module.Demo" />
     <Modularity:ModuleInfo Ref="file://Prism.Module.Demo.dll" ModuleName="CollectionEditorDemo"
             ModuleType="Prism.Module.CollectionEditorDemo.CollectionEditorDemoModule, Prism.Module.CollectionEditorDemo" />
+
+    <Modularity:ModuleInfo Ref="file://Prism.Module.ParentModule.dll" ModuleName="ParentModule"
+            ModuleType="Prism.Module.ParentModule.ParentModule, Prism.Module.ParentModule" />
+
+    <Modularity:ModuleInfo Ref="file://Prism.Module.ChildModuleA.dll" ModuleName="ModuleA"
+            ModuleType="Prism.Module.ChildModuleA.ModuleA, Prism.Module.ChildModuleA" />
+
+    <Modularity:ModuleInfo Ref="file://Prism.Module.ChildModuleB.dll" ModuleName="ModuleB"
+            ModuleType="Prism.Module.ChildModuleB.ModuleB, Prism.Module.ChildModuleB" />
+
 </Modularity:ModuleCatalog>

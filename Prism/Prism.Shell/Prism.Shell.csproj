@@ -152,6 +152,14 @@
       <Project>{101f1ea4-67bb-422f-811a-6a7317df8821}</Project>
       <Name>Core.UI</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Prism.Module.ChildModuleA\Prism.Module.ChildModuleA.csproj">
+      <Project>{0af8c128-7dd2-4ec6-bac2-a98139a0f8d3}</Project>
+      <Name>Prism.Module.ChildModuleA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Prism.Module.ChildModuleB\Prism.Module.ChildModuleB.csproj">
+      <Project>{0f3f4434-d0f1-47a1-8cee-62eddc96f6dd}</Project>
+      <Name>Prism.Module.ChildModuleB</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Prism.Module.CollectionEditorDemo\Prism.Module.CollectionEditorDemo.csproj">
       <Project>{b3e9f657-9963-4e74-984f-0d6c0f815480}</Project>
       <Name>Prism.Module.CollectionEditorDemo</Name>
@@ -159,6 +167,10 @@
     <ProjectReference Include="..\Prism.Module.Demo\Prism.Module.Demo.csproj">
       <Project>{e5179284-02ab-442d-a7d5-edd0e484536d}</Project>
       <Name>Prism.Module.Demo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Prism.Module.ParentModule\Prism.Module.ParentModule.csproj">
+      <Project>{55c01b23-253a-442d-b876-4b0f9a907c5c}</Project>
+      <Name>Prism.Module.ParentModule</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

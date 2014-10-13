@@ -3,29 +3,25 @@ using Core.Common;
 using Core.Common.Interfaces;
 using Core.Common.ViewModels;
 using Microsoft.Practices.Prism.Commands;
-using Microsoft.Practices.Prism.Logging;
 using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.Regions;
-using Prism.Module.Demo.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Controls;
 
-namespace Prism.Module.Demo
+namespace Prism.Module.ParentModule
 {
-    public class DemoModule : IModule
+    public class ParentModule : IModule
     {
-        private readonly IRegionManager _regionManager;
+private readonly IRegionManager _regionManager;
         private readonly IWindsorContainer _container;
         private readonly IUiExtensionService _uiExtensionService;
-        private DemoView _view;
 
         private NavigationItemViewModel _navigationItem;
 
-        public DemoModule(
+        public ParentModule(
             IRegionManager regionManager, 
             IWindsorContainer container,
             IUiExtensionService uiExtensionService
@@ -35,7 +31,7 @@ namespace Prism.Module.Demo
             _container = container;
             _uiExtensionService = uiExtensionService;
             var openViewCommand = new DelegateCommand(OpenView);
-            _navigationItem = new NavigationItemViewModel("Open Demo Module", openViewCommand);
+            _navigationItem = new NavigationItemViewModel("Open Parent Module", openViewCommand);
         }
 
         public void Initialize()
@@ -46,8 +42,8 @@ namespace Prism.Module.Demo
 
         private void OpenView()
         {
-            Uri uri = new Uri("DemoView", UriKind.Relative);
+            Uri uri = new Uri("ParentModuleView", UriKind.Relative);
             _regionManager.RequestNavigate(KnownRegionNames.ContentRegion, uri);
-        }
+        }        
     }
 }
