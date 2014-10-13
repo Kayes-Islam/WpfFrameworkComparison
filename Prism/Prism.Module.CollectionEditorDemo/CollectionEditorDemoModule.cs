@@ -22,7 +22,6 @@ namespace Prism.Module.CollectionEditorDemo
         private IRegionManager _regionManager;
         private NavigationItemViewModel _navigationItem;
         private IUiExtensionService _uiExtensionService;
-        private ICollectionEditorDemoViewModel _viewModel;
 
         public CollectionEditorDemoModule(
             IWindsorContainer container,
