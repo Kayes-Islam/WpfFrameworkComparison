@@ -2,23 +2,37 @@
 <Modularity:ModuleCatalog xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:Modularity="clr-namespace:Microsoft.Practices.Prism.Modularity;assembly=Microsoft.Practices.Prism.Composition">
-     
+
     <Modularity:ModuleInfo Ref="file://Prism.Module.Demo.dll" ModuleName="DemoModule"
             ModuleType="Prism.Module.Demo.DemoModule, Prism.Module.Demo" />
     
     <Modularity:ModuleInfo Ref="file://Prism.Module.Demo.dll" ModuleName="CollectionEditorDemo"
             ModuleType="Prism.Module.CollectionEditorDemo.CollectionEditorDemoModule, Prism.Module.CollectionEditorDemo" />
 
-    <Modularity:ModuleInfo Ref="file://Prism.Module.ParentModule.dll" ModuleName="ParentModule"
-            ModuleType="Prism.Module.ParentModule.ParentModule, Prism.Module.ParentModule" />
+    <Modularity:ModuleInfoGroup>
+        <Modularity:ModuleInfo Ref="file://Prism.Module.ParentModule.dll" ModuleName="ParentModule"
+                ModuleType="Prism.Module.ParentModule.ParentModule, Prism.Module.ParentModule" />
 
-    <Modularity:ModuleInfo Ref="file://Prism.Module.ChildModuleA.dll" ModuleName="ModuleA"
-            ModuleType="Prism.Module.ChildModuleA.ModuleA, Prism.Module.ChildModuleA" />
+        <Modularity:ModuleInfo Ref="file://Prism.Module.ChildModuleA.dll" ModuleName="ModuleA"
+                ModuleType="Prism.Module.ChildModuleA.ModuleA, Prism.Module.ChildModuleA">
+            <Modularity:ModuleInfo.DependsOn>
+                <sys:String>ParentModule</sys:String>
+            </Modularity:ModuleInfo.DependsOn>        
+        </Modularity:ModuleInfo>
 
-    <Modularity:ModuleInfo Ref="file://Prism.Module.ChildModuleB.dll" ModuleName="ModuleB"
-            ModuleType="Prism.Module.ChildModuleB.ModuleB, Prism.Module.ChildModuleB" />
+        <Modularity:ModuleInfo Ref="file://Prism.Module.ChildModuleB.dll" ModuleName="ModuleB"
+                ModuleType="Prism.Module.ChildModuleB.ModuleB, Prism.Module.ChildModuleB">
+            <Modularity:ModuleInfo.DependsOn>
+                <sys:String>ParentModule</sys:String>
+            </Modularity:ModuleInfo.DependsOn>
+        </Modularity:ModuleInfo>
 
-    <Modularity:ModuleInfo Ref="file://Prism.Module.ChildModuleC.dll" ModuleName="ModuleC"
-            ModuleType="Prism.Module.ChildModuleC.ModuleC, Prism.Module.ChildModuleC" />    
-    
+        <Modularity:ModuleInfo Ref="file://Prism.Module.ChildModuleC.dll" ModuleName="ModuleC"
+                ModuleType="Prism.Module.ChildModuleC.ModuleC, Prism.Module.ChildModuleC">
+            <Modularity:ModuleInfo.DependsOn>
+                <sys:String>ParentModule</sys:String>
+            </Modularity:ModuleInfo.DependsOn>
+        </Modularity:ModuleInfo>
+    </Modularity:ModuleInfoGroup>
+
 </Modularity:ModuleCatalog>
