@@ -55,24 +55,21 @@ namespace Prism.Shell
             this.Container.Install(new Prism.Shell.Installers.Installer());
             this.Container.Install(new Core.UI.Installers.Installer());
 
-            /// TODO: Have to change this so that instead of registering all IModules
-            /// just register the one's that are defined in Module Catalog
-            Container.Register(
-                Classes
-                    .FromAssemblyInDirectory(new AssemblyFilter(""))
-                    .BasedOn<IModule>()
-                    .WithServiceSelf()
-                    .LifestyleTransient()
-            );
-
-            /// TODO: Have to move this later to installer base
-            Container.Register(
-                Classes
-                    .FromAssemblyInDirectory(new AssemblyFilter(""))
-                    .BasedOn<IView>()
-                    .WithServiceSelf()
-                    .LifestyleTransient()
-            );
+            foreach (var mod in ModuleCatalog.Modules)
+            {
+                var moduleType = Type.GetType(mod.ModuleType);
+                var assembly = moduleType.Assembly;
+                Container.Register(
+                    Component
+                        .For(moduleType)
+                        .LifestyleTransient(),
+                    Classes
+                        .FromAssembly(assembly)
+                        .BasedOn<IView>()
+                        .WithServiceSelf()
+                        .LifestyleTransient()
+                );
+            }
         }
 
         protected override void ConfigureServiceLocator()

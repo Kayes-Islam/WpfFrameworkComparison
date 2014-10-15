@@ -1,4 +1,5 @@
-﻿using Microsoft.Practices.Prism.Mvvm;
+﻿using Fluent;
+using Microsoft.Practices.Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace Prism.Shell.Views
     /// <summary>
     /// Interaction logic for Shell.xaml
     /// </summary>
-    public partial class ShellView : Window, IView
+    public partial class ShellView : RibbonWindow, IView
     {
         public ShellView()
         {
