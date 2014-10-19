@@ -2,6 +2,7 @@
 using Core.Common;
 using Core.Common.Constants;
 using Core.Common.Interfaces;
+using Core.Common.Models;
 using Core.Common.ViewModels;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Modularity;
@@ -11,6 +12,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace Prism.Module.ParentModule
 {
@@ -39,6 +42,12 @@ private readonly IRegionManager _regionManager;
         {
             _container.Install(new Installers.Installer());
             _uiExtensionService.AddNavigationalItem(_navigationItem);
+
+
+            var button = new Fluent.Button();
+            button.Header = "Parent Module";
+            var ribbonItem = new RibbonItem(button);
+            _regionManager.RegisterViewWithRegion(KnownRegionNames.HomePageDefaultGroupRegion, () => ribbonItem);
         }
 
         private void OpenView()

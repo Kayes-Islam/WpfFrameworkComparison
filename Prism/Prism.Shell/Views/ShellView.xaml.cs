@@ -24,6 +24,23 @@ namespace Prism.Shell.Views
         public ShellView()
         {
             InitializeComponent();
+
+            SetupRibbon();
+        }
+
+        private void SetupRibbon()
+        {
+            //var tabItem = new RibbonTabItem();
+            //tabItem.Header = "Tab";
+            //var group = new RibbonGroupBox();
+            //group.Header = "Group";
+            //tabItem.Groups.Add(group);
+            //var button = new Fluent.Button();
+            //button.Header = "Green";
+            //button.Icon = @"..\Images\Green.png";
+            //button.LargeIcon = @"..\Images\GreenLarge.png";
+            //group.Items.Add(button);
+            //Ribbon.Tabs.Add(tabItem);
         }
     }
 }

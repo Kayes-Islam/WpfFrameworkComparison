@@ -8,7 +8,7 @@
         xmlns:Fluent="clr-namespace:Fluent;assembly=Fluent" 
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="Shell" Height="600" Width="800">
-    <Grid>        
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -18,27 +18,15 @@
             <ColumnDefinition Width="5*" />
         </Grid.ColumnDefinitions>
 
-        <Fluent:Ribbon Grid.ColumnSpan="2">
-            <!--Backstage-->
-            <Fluent:Ribbon.Menu>
-                <Fluent:Backstage></Fluent:Backstage>
-            </Fluent:Ribbon.Menu>
+        <Fluent:Ribbon Grid.ColumnSpan="2" >
             <!--Tabs-->
             <Fluent:RibbonTabItem Header="Tab">
-                <Fluent:RibbonGroupBox Header="Group">
-                    <Fluent:Button Name="buttonGreen" 
-                                   Header="Green"      
-                                   Icon="..\Images\Green.png"                 
-                                   LargeIcon="..\Images\GreenLarge.png" />
-                    <Fluent:Button Name="buttonGray" 
-                                   Header="Grey" 
-                                   Icon="..\Images\Gray.png"      
-                                   LargeIcon="..\Images\GrayLarge.png" />
-                </Fluent:RibbonGroupBox>
+                <!--<Fluent:RibbonGroupBox Header="Group" />-->                
+                <Fluent:RibbonGroupBox Header="Group" 
+                    cal:RegionManager.RegionName="HomePageDefaultGroupRegion" />
             </Fluent:RibbonTabItem>
         </Fluent:Ribbon>
-
-
+        
         <ItemsControl Grid.Row="1" Grid.Column="0" BorderThickness="1" BorderBrush="Black"
                 ItemsSource="{Binding NavigationViewModel.NavigationItems}">
             <ItemsControl.ItemTemplate>
@@ -48,7 +36,8 @@
             </ItemsControl.ItemTemplate>
         </ItemsControl>
 
-        <ContentControl Grid.Row="1" Grid.Column="1" cal:RegionManager.RegionName="{x:Static common:KnownRegionNames.ContentRegion}" />
+        <ContentControl Grid.Row="1" Grid.Column="1" 
+                        cal:RegionManager.RegionName="{x:Static common:KnownRegionNames.ContentRegion}" />
 
     </Grid>
 </Fluent:RibbonWindow>

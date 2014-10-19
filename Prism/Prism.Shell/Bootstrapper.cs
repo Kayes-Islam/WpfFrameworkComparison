@@ -12,6 +12,10 @@ using System.Xml;
 using System.Windows.Markup;
 using Castle.MicroKernel.Registration;
 using Castle.Facilities.TypedFactory;
+using Fluent;
+using Core.UI.PrismExtensions.Regions;
+using Microsoft.Practices.Prism.Regions;
+using Core.UI.Interfaces;
 
 namespace Prism.Shell
 {
@@ -70,6 +74,13 @@ namespace Prism.Shell
                         .LifestyleTransient()
                 );
             }
+        }
+
+        protected override RegionAdapterMappings ConfigureRegionAdapterMappings()
+        {
+            var mappings = base.ConfigureRegionAdapterMappings();
+            mappings.RegisterMapping(typeof(RibbonGroupBox), Container.Resolve <IRibbonPageGroupRegionAdapter>());
+            return mappings;
         }
 
         protected override void ConfigureServiceLocator()

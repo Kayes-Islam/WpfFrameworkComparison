@@ -6,6 +6,7 @@ using Core.Common.Interactions;
 using Core.Common.Interfaces;
 using Core.UI.Interactions;
 using Core.UI.Interfaces;
+using Core.UI.PrismExtensions.Regions;
 using Core.UI.Services;
 using Core.UI.ViewModels;
 using System;
@@ -55,7 +56,12 @@ namespace Core.UI.Installers
                 Component
                     .For<IInteractionService>()
                     .ImplementedBy<InteractionService>()
-                    .LifestyleTransient()               
+                    .LifestyleTransient(),
+
+                Component
+                    .For<IRibbonPageGroupRegionAdapter>()
+                    .ImplementedBy<RibbonPageGroupRegionAdapter>()
+                    .LifestyleTransient()
             );  
         }
     }
