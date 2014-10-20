@@ -18,7 +18,7 @@ namespace Core.Common.Models
         {
             RibbonControl = ribbonControl;
             TabHeader = pageHeader;
-            GroupHeader = GroupHeader;
+            GroupHeader = groupHeader;
         }
 
         public string TabHeader { get; private set; }

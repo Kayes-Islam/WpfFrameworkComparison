@@ -32,7 +32,19 @@ namespace Core.UI.PrismExtensions.Regions
 
         public void Activate(object view)
         {
-            // Activating ribbon item does nothing
+            // Activates the tab
+            var item = view as RibbonItem;
+
+            if (item != null)
+            {
+                var tab = _ribbon.Tabs
+                    .FirstOrDefault(t => t.Header.ToString() == item.TabHeader);
+
+                if (tab != null)
+                {
+                    _ribbon.SelectedTabItem = tab;
+                }
+            }
         }
 
         public IViewsCollection ActiveViews
@@ -102,7 +114,8 @@ namespace Core.UI.PrismExtensions.Regions
 
         public void Deactivate(object view)
         {
-            // does nothing
+            // selects the first tab
+            _ribbon.SelectedTabIndex = 0;
         }
 
         public object GetView(string viewName)
@@ -163,7 +176,7 @@ namespace Core.UI.PrismExtensions.Regions
         private RibbonTabItem FindOrCreateTab(string header)
         {
             var tabItem = _ribbon.Tabs
-                .FirstOrDefault(t => t.Header == header);
+                .FirstOrDefault(t => t.Header.ToString() == header);
             if (tabItem == null)
             {
                 tabItem = new RibbonTabItem();
@@ -177,7 +190,7 @@ namespace Core.UI.PrismExtensions.Regions
         private RibbonGroupBox FindOrCreateGroup(RibbonTabItem tabItem, string header)
         {
             var groupBox = tabItem.Groups
-                .FirstOrDefault(g => g.Header == header);
+                .FirstOrDefault(g => g.Header.ToString() == header);
             if (groupBox == null)
             {
                 groupBox = new RibbonGroupBox();
@@ -191,11 +204,11 @@ namespace Core.UI.PrismExtensions.Regions
         private void RemoveItemFromRibbon(RibbonItem ribbonItem)
         {
             var tab = _ribbon.Tabs
-                .FirstOrDefault(t => t.Header == ribbonItem.TabHeader);
+                .FirstOrDefault(t => t.Header.ToString() == ribbonItem.TabHeader);
             if (tab == null) return;
 
             var group = tab.Groups
-                .FirstOrDefault(g => g.Header == ribbonItem.GroupHeader);
+                .FirstOrDefault(g => g.Header.ToString() == ribbonItem.GroupHeader);
             if (group == null) return;
 
             group.Items.Remove(ribbonItem.RibbonControl);

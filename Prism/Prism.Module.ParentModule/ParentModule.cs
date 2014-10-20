@@ -43,11 +43,10 @@ private readonly IRegionManager _regionManager;
             _container.Install(new Installers.Installer());
             _uiExtensionService.AddNavigationalItem(_navigationItem);
 
-
             var button = new Fluent.Button();
             button.Header = "Parent Module";
-            var ribbonItem = new RibbonItem(button);
-            _regionManager.RegisterViewWithRegion(KnownRegionNames.HomePageDefaultGroupRegion, () => ribbonItem);
+            var ribbonItem = new RibbonItem(button, "Tab1", "Group1");
+            _regionManager.RegisterViewWithRegion(KnownRegionNames.RibbonRegion, () => ribbonItem);
         }
 
         private void OpenView()

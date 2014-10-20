@@ -79,7 +79,7 @@ namespace Prism.Shell
         protected override RegionAdapterMappings ConfigureRegionAdapterMappings()
         {
             var mappings = base.ConfigureRegionAdapterMappings();
-            mappings.RegisterMapping(typeof(RibbonGroupBox), Container.Resolve <IRibbonPageGroupRegionAdapter>());
+            mappings.RegisterMapping(typeof(Ribbon), Container.Resolve<IRibbonRegionAdapter>());
             return mappings;
         }
 

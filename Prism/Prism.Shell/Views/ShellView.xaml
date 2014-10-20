@@ -18,13 +18,8 @@
             <ColumnDefinition Width="5*" />
         </Grid.ColumnDefinitions>
 
-        <Fluent:Ribbon Grid.ColumnSpan="2" >
-            <!--Tabs-->
-            <Fluent:RibbonTabItem Header="Tab">
-                <!--<Fluent:RibbonGroupBox Header="Group" />-->                
-                <Fluent:RibbonGroupBox Header="Group" 
-                    cal:RegionManager.RegionName="HomePageDefaultGroupRegion" />
-            </Fluent:RibbonTabItem>
+        <Fluent:Ribbon Grid.ColumnSpan="2"
+                cal:RegionManager.RegionName="{x:Static common:KnownRegionNames.RibbonRegion}">
         </Fluent:Ribbon>
         
         <ItemsControl Grid.Row="1" Grid.Column="0" BorderThickness="1" BorderBrush="Black"

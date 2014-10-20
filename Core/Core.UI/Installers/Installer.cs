@@ -58,9 +58,9 @@ namespace Core.UI.Installers
                     .ImplementedBy<InteractionService>()
                     .LifestyleTransient(),
 
-                Component
-                    .For<IRibbonPageGroupRegionAdapter>()
-                    .ImplementedBy<RibbonPageGroupRegionAdapter>()
+               Component
+                    .For<IRibbonRegionAdapter>()
+                    .ImplementedBy<RibbonRegionAdapter>()
                     .LifestyleTransient()
             );  
         }

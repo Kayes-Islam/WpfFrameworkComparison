@@ -11,6 +11,7 @@ namespace Core.Common
         public const string InfoPanel = "InfoPanel";
         public const string ContentRegion = "ContentRegion";
         public const string ChildRegion = "ChildRegion";
+        public const string RibbonRegion = "RibbonRegion";
         public const string HomePageDefaultGroupRegion = "HomePageDefaultGroupRegion";
     }
 }
