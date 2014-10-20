@@ -88,10 +88,11 @@
     <Compile Include="Interfaces\INavigationViewModel.cs" />
     <Compile Include="Interfaces\IRibbonPageGroupRegionAdapter.cs" />
     <Compile Include="Interfaces\IRibbonRegion.cs" />
-    <Compile Include="Interfaces\IRibbonRegionFactory.cs" />
+    <Compile Include="Interfaces\IRibbonRegionAdapter.cs" />
     <Compile Include="Interfaces\IViewResolver.cs" />
     <Compile Include="PrismExtensions\Regions\RibbonPageGroupRegion.cs" />
     <Compile Include="PrismExtensions\Regions\RibbonPageGroupRegionAdapter.cs" />
+    <Compile Include="PrismExtensions\Regions\RibbonRegion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DialogHandle.cs" />
     <Compile Include="Services\InteractionService.cs" />

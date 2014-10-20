@@ -14,6 +14,17 @@ namespace Core.Common.Models
             RibbonControl = ribbonControl;
         }
 
+        public RibbonItem(object ribbonControl, string pageHeader, string groupHeader)
+        {
+            RibbonControl = ribbonControl;
+            TabHeader = pageHeader;
+            GroupHeader = GroupHeader;
+        }
+
+        public string TabHeader { get; private set; }
+
+        public string GroupHeader { get; private set; }
+
         public object RibbonControl { get; private set; }
     }
 }
